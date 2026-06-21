@@ -23,7 +23,7 @@ public class OrderFlowTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
-    // Позитивный сценарий: через кнопку в Header
+
     @Test
     public void positiveOrderFlowHeaderTest() {
         new MainPage(driver).openSite().clickCookieButton().clickOrderButton("header");

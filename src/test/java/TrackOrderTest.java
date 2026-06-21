@@ -17,7 +17,6 @@ public class TrackOrderTest extends tests.CommonBaseTest {
         trackPage.enterOrderNumber("000000");
         trackPage.clickGoButton();
 
-        // Просто вызываем метод, который теперь сам знает про локатор
         assertTrue(trackPage.isErrorImageDisplayed(), "Картинка ошибки не появилась!");
     }
 }

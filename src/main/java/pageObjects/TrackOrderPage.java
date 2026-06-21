@@ -8,7 +8,7 @@ import java.time.Duration;
 public class TrackOrderPage {
     private WebDriver driver;
 
-    // Локаторы переносим СЮДА (в класс)
+
     private final By orderInput = By.xpath(".//input[@placeholder='Введите номер заказа']");
     private final By goButton = By.xpath(".//button[text()='Go!']");
     // Используем xpath с текстом для надежности

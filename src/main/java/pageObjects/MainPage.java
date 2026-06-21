@@ -29,7 +29,7 @@ public class MainPage {
         this.driver = driver;
     }
 
-    // --- Методы для работы с заказом ---
+
     public MainPage openSite() {
         driver.get("https://qa-scooter.praktikum-services.ru/");
         return this;
@@ -50,7 +50,7 @@ public class MainPage {
         }
     }
 
-    // --- Методы для работы с FAQ ---
+
     public void scrollPageToEndOfList() {
         WebElement element = driver.findElement(By.className("Home_FAQ__3uVm4"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
@@ -74,7 +74,7 @@ public class MainPage {
 
     public void clickScooterLogo() {
         WebElement element = driver.findElement(scooterLogo);
-        // «Железобетонный» клик: скроллим и кликаем через JavaScript
+
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
@@ -82,10 +82,9 @@ public class MainPage {
     public void clickYandexLogo() {
         driver.findElement(yandexLogo).click();
     }
-    // Добавь локатор к остальным локаторам
+
     private final By statusButton = By.className("Header_Link__1TAG7"); // Класс кнопки "Статус заказа"
 
-    // Добавь этот метод
     public void clickStatusButton() {
         driver.findElement(statusButton).click();
     }

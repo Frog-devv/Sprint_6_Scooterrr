@@ -31,28 +31,27 @@ public class RentPage {
     private final By rejectButton = By.xpath(".//button[text()='Нет']");
 
     public void clickRejectButton() {
-        // 1. Ждем, пока кнопка станет кликабельной
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement button = wait.until(ExpectedConditions.elementToBeClickable(rejectButton));
 
-        // 2. Скроллим до неё, чтобы она попала в область видимости
+
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", button);
 
-        // 3. Кликаем
+
         button.click();
     }
-    // Локатор комментария
+
     private final By commentField = By.xpath(".//input[@placeholder='Комментарий для курьера']");
 
     public RentPage sendComment(String comment) {
-        // 1. Ждем появления поля на странице
+
         WebElement field = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOfElementLocated(commentField));
 
-        // 2. Прокручиваем, чтобы поле было точно в зоне видимости
+
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", field);
 
-        // 3. Очищаем поле (на случай, если там что-то было) и вводим текст
         field.clear();
         field.sendKeys(comment);
 

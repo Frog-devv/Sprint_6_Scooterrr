@@ -30,11 +30,11 @@ public class LogoTest extends tests.CommonBaseTest {
         String mainWindow = driver.getWindowHandle();
         mainPage.clickYandexLogo();
 
-        // 1. Ждем, пока откроется новая вкладка
+
         new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.numberOfWindowsToBe(2));
 
-        // 2. Переключаемся на неё
+
         for (String windowHandle : driver.getWindowHandles()) {
             if (!windowHandle.equals(mainWindow)) {
                 driver.switchTo().window(windowHandle);
@@ -42,15 +42,15 @@ public class LogoTest extends tests.CommonBaseTest {
             }
         }
 
-        // 3. Вместо urlContains, проверяем заголовок или URL
-        // Это более гибкий подход
+
+
         new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(driver -> driver.getCurrentUrl().contains("yandex"));
 
         String currentUrl = driver.getCurrentUrl();
         System.out.println("Мы перешли на страницу: " + currentUrl); // Посмотри в консоль, что там написано
 
-        // Обновленный блок в LogoTest.java:
+
         new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(driver -> driver.getCurrentUrl().contains("yandex") || driver.getCurrentUrl().contains("dzen"));
 
