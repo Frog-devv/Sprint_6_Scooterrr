@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class TrackOrderPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
 
     private final By orderInput = By.xpath(".//input[@placeholder='Введите номер заказа']");

@@ -3,7 +3,7 @@ package pageObjects;
 import org.openqa.selenium.*;
 
 public class OrderPage {
-    private WebDriver driver;
+    private final WebDriver driver;
     private final By name = By.xpath(".//input[@placeholder='* Имя']");
     private final By surname = By.xpath(".//input[@placeholder='* Фамилия']");
     private final By address = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
