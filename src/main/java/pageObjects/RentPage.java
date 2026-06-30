@@ -4,9 +4,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-////
+
 public class RentPage {
-    private WebDriver driver;
+    private final WebDriver driver;
     private final By date = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
     private final By rentalTimeField = By.className("Dropdown-placeholder");
     private final By rentalTime = By.xpath(".//div[text()='сутки']");

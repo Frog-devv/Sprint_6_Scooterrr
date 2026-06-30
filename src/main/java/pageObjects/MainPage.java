@@ -1,6 +1,5 @@
 package pageObjects;
 
-/////
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -8,7 +7,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     // Локаторы для заказа
     private final By cookieButton = By.id("rcc-confirm-button");
