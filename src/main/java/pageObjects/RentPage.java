@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-////
+
 public class RentPage {
     private WebDriver driver;
     private final By date = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
