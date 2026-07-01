@@ -1,10 +1,12 @@
 package tests;
-//////
+
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.MainPage;
 import java.time.Duration;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LogoTest extends tests.CommonBaseTest {
@@ -19,7 +21,7 @@ public class LogoTest extends tests.CommonBaseTest {
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.urlToBe("https://qa-scooter.praktikum-services.ru/"));
 
-        assertTrue(driver.getCurrentUrl().equals("https://qa-scooter.praktikum-services.ru/"), "Переход на главную не произошел!");
+        assertEquals("https://qa-scooter.praktikum-services.ru/", driver.getCurrentUrl(), "Переход на главную не произошел!");
     }
 
     @Test
